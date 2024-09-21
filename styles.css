@@ -1,0 +1,142 @@
+/* Basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f5;
+    color: #333;
+}
+
+/* Header with navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+}
+
+nav a:hover {
+    background-color: #4A90E2;
+    border-radius: 4px;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(45deg, #4A90E2, #357ABD);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 15px 30px;
+    font-size: 1em;
+    background-color: white;
+    color: #357ABD;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #4A90E2;
+    color: white;
+}
+
+/* Main container */
+main {
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Word Detection UI */
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    border: 2px dashed #4A90E2;
+    border-radius: 5px;
+}
+
+/* Word detection buttons */
+#controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #4A90E2;
+    background-color: #4A90E2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#controls button:hover {
+    background-color: #357ABD;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #4A90E2;
+    text-decoration: none;
+}

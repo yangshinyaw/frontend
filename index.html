@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Detection and TrOCR App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Cryptop Word App</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">How It Works</a>
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Word Detection and TrOCR Extraction</h1>
+        <p>The Future of Text Recognition and Extraction.</p>
+        <button>Get Started</button>
+    </div>
+
+    <main>
+        <!-- File input -->
+        <input type="file" id="fileInput" accept="image/*">
+        
+        <!-- Canvas container -->
+        <div id="container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <!-- Word detection buttons -->
+        <div id="controls">
+            <button id="detectButton">Detect Words</button>
+            <button id="extractButton">Extract Words</button>
+            <button id="saveZipButton">Save Words as ZIP</button>
+        </div>
+
+        <!-- Extracted words output -->
+        <div id="output">
+            <h2>Extracted Words:</h2>
+            <ul id="predictedWords"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ExtractorDetector Word App | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
