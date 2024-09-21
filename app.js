@@ -208,37 +208,30 @@ document.getElementById('extractButton').addEventListener('click', async () => {
     const canvas = document.getElementById('canvas');
     const formData = new FormData();
 
-    for (let i = 0; i < detectedWords.length; i++) {
-        const word = detectedWords[i];
-        const bbox = word.bbox;
+    // Convert the canvas content (image) into a Blob and append it to the form data
+    await new Promise(resolve => {
+        canvas.toBlob(blob => {
+            formData.append('file', blob, 'image.png');  // Send the file as "image.png"
+            resolve();
+        }, 'image/png');
+    });
 
-        const croppedCanvas = document.createElement('canvas');
-        const croppedCtx = croppedCanvas.getContext('2d');
-        const width = bbox.x1 - bbox.x0;
-        const height = bbox.y1 - bbox.y0;
-        croppedCanvas.width = width;
-        croppedCanvas.height = height;
-        croppedCtx.drawImage(canvas, bbox.x0, bbox.y0, width, height, 0, 0, width, height);
-
-        await new Promise(resolve => {
-            croppedCanvas.toBlob(blob => {
-                formData.append('files', blob, `word_${i}.png`);
-                resolve();
-            }, 'image/png');
-        });
-    }
-
-    const response = await fetch('https://eguls-streamlitsflask.hf.space/extract', {  // Correct URL
+    // Send POST request to Streamlit backend for text extraction
+    const response = await fetch('https://eguls-streamlitsflask.hf.space/extract', {  // Replace with your Streamlit backend URL
         method: 'POST',
         body: formData
     });
 
+    // Handle the response and display the extracted text
     if (response.ok) {
         const data = await response.json();
         const predictedWords = document.getElementById('predictedWords');
+        predictedWords.innerHTML = '';  // Clear previous predictions
+        
+        // Display each extracted text from the response
         data.texts.forEach(text => {
             const wordItem = document.createElement("li");
-            wordItem.textContent = text;  // Display extracted text
+            wordItem.textContent = text;  // Add the extracted text
             predictedWords.appendChild(wordItem);
         });
     } else {
