@@ -228,7 +228,7 @@ document.getElementById('extractButton').addEventListener('click', async () => {
         });
     }
 
-    const response = await fetch('https://huggingface.co/spaces/eguls/streamlitsflask', {  // Updated URL
+    const response = await fetch('https://eguls-streamlitsflask.hf.space/extract', {  // Correct URL
         method: 'POST',
         body: formData
     });
