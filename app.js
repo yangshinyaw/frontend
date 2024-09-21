@@ -228,7 +228,7 @@ document.getElementById('extractButton').addEventListener('click', async () => {
         });
     }
 
-    const response = await fetch('http://localhost:5001/extract', {
+    const response = await fetch('https://backend-pw0r.onrender.com/extract', {  // Updated URL
         method: 'POST',
         body: formData
     });
