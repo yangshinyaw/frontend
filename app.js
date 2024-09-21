@@ -228,7 +228,7 @@ document.getElementById('extractButton').addEventListener('click', async () => {
         });
     }
 
-    const response = await fetch('https://backend-pw0r.onrender.com/extract', {  // Updated URL
+    const response = await fetch('https://huggingface.co/spaces/eguls/streamlitsflask', {  // Updated URL
         method: 'POST',
         body: formData
     });
